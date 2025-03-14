@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindIt - Lost and Found Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <div class="logo">
+            <a href="index.html" class="logo-link">
+              <i class="fa-solid fa-magnifying-glass"></i>FindIt
+            </a>
+          </div>
+          <nav class="desktop-nav">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="lost-item.html" class="nav-link">Report Lost</a>
+            <a href="found-item.html" class="nav-link">Report Found</a>
+            <a href="listings.html" class="nav-link">Listings</a>
+          </nav>
+        </div>
+        <div class="mobile-menu-toggle">
+          <button id="mobile-toggle-btn">
+            <span class="sr-only">Open main menu</span>
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link active">Home</a>
+        <a href="lost-item.html" class="mobile-nav-link">Report Lost</a>
+        <a href="found-item.html" class="mobile-nav-link">Report Found</a>
+        <a href="listings.html" class="mobile-nav-link">Listings</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Lost something? Found something?</h1>
+      <p class="hero-subtitle">Let's help each other!</p>
+      <div class="hero-buttons">
+        <a href="lost-item.html" class="btn btn-secondary">
+          <i class="fa-solid fa-search"></i> Report Lost Item
+        </a>
+        <a href="found-item.html" class="btn btn-green">
+          <i class="fa-solid fa-hand-holding"></i> Report Found Item
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-box">
+        <h2 class="section-title">Search for Lost & Found Items</h2>
+        <div class="search-form">
+          <input type="text" id="search-input" class="search-input" placeholder="Search by item name, location, or description...">
+          <button id="search-btn" class="btn btn-primary">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Simple steps to reunite people with their lost belongings</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-file-pen"></i>
+          </div>
+          <h3 class="feature-title">Submit a Report</h3>
+          <p class="feature-desc">Report your lost or found item with details and a photo to help with matching.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-link"></i>
+          </div>
+          <h3 class="feature-title">Get Matched</h3>
+          <p class="feature-desc">Our system matches similar lost and found items based on descriptions and locations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h3 class="feature-title">Connect & Retrieve</h3>
+          <p class="feature-desc">Connect with the finder/owner and arrange for the item to be returned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Items Section -->
+  <section class="recent-items-section">
+    <div class="container">
+      <div class="section-header-with-link">
+        <h2 class="section-title">Recent Listings</h2>
+        <a href="listings.html" class="view-all-link">
+          View All <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="items-grid" id="recent-items">
+        <!-- Item cards will be loaded dynamically -->
+        <!-- Example static card for demonstration -->
+        <div class="item-card">
+          <img src="https://images.unsplash.com/photo-1586769852044-692d6e3703f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=300&q=80" alt="Sample Item" class="item-image">
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">Black Wallet</h3>
+              <span class="item-tag lost">lost</span>
+            </div>
+            <p class="item-description">Lost my black leather wallet near Central Park on Saturday afternoon. Contains ID and credit cards.</p>
+            <div class="item-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Central Park</span>
+              <span><i class="fa-regular fa-calendar"></i> 2023-07-15</span>
+            </div>
+          </div>
+          <div class="item-footer">
+            <button class="contact-btn">
+              Contact <i class="fa-solid fa-envelope"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="no-items-message" id="no-items-message" style="display: none;">
+        <div class="empty-icon">
+          <i class="fa-solid fa-list"></i>
+        </div>
+        <h3 class="empty-title">No items yet</h3>
+        <p class="empty-description">Be the first to report a lost or found item!</p>
+        <div class="empty-actions">
+          <a href="lost-item.html" class="btn btn-outline-primary">Report Lost Item</a>
+          <a href="found-item.html" class="btn btn-outline-green">Report Found Item</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">FindIt</div>
+          <p class="footer-desc">Helping reunite people with their lost belongings since 2023.</p>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">How it Works</a></li>
+            <li><a href="#" class="footer-link">Success Stories</a></li>
+            <li><a href="#" class="footer-link">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="lost-item.html" class="footer-link">Report Lost Item</a></li>
+            <li><a href="found-item.html" class="footer-link">Report Found Item</a></li>
+            <li><a href="listings.html" class="footer-link">Browse Listings</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Contact</h3>
+          <ul class="footer-contact">
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>support@findit.example</span>
+            </li>
+            <li class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+1 (555) 123-4567</span>
+              </li>
+            </ul>
+            <div class="footer-social">
+              <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 FindIt. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  
+    <script>
+      // Simple mobile menu toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileToggleBtn = document.getElementById('mobile-toggle-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+  
+        if (mobileToggleBtn && mobileMenu) {
+          mobileToggleBtn.addEventListener('click', function() {
+            if (mobileMenu.classList.contains('active')) {
+              mobileMenu.classList.remove('active');
+              mobileToggleBtn.innerHTML = '<span class="sr-only">Open main menu</span><i class="fa-solid fa-bars"></i>';
+            } else {
+              mobileMenu.classList.add('active');
+              mobileToggleBtn.innerHTML = '<span class="sr-only">Close main menu</span><i class="fa-solid fa-times"></i>';
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+  </html>
